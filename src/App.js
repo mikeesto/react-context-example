@@ -1,24 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { StoreContext } from "./context/store";
 
 function App() {
+  const [item, setItem] = useContext(StoreContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Store item is: {item}</h1>
+      <button onClick={() => setItem("Coco Pops")}>Change store item</button>
+    </>
   );
 }
 
